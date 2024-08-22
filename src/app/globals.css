@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-color: #015CC3;
+  --secondary-color: #d70222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --primary-color: #015CC3;
+    --secondary-color: #d70222;
+  }
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+
+.menu-hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-hamburger {
+    display: block;
+  }
+
+  .menu nav {
+    display: none;
+  }
+
+  .menu.opened .menu-hamburger {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .menu.opened {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    padding: 3rem 2rem;
+  }
+
+  .menu.opened nav {
+    display: block;
+  }
+
+  .menu.opened nav a {
+    display: block;
+    text-align: left;
+    margin-left: 0 !important;
+    padding: 0.5rem;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.bg-primary {
+  background: var(--primary-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  color: white;
+  box-shadow: 1px 1px 5px 3px #ccc;
+  background: green;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.gallery-image-hover:hover {
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.gallery-image-hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.gallery-image-hover svg {
+  color: white;
+}
+
+.gallery-box {
+  position: relative;
+}
